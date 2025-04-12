@@ -17,7 +17,7 @@ Este proyecto es una pequeña aplicación web que permite ingresar dos números 
 
 git clone https://github.com/maferpinazocode/mi-calculadora-express.git
 
-     cd mi-calculadora-express
+     cd my-express-app
 
 Instala las dependencias:  
 
