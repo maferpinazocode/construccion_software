@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Calculadora</title>
+  <style>
+    body { font-family: Arial; padding: 2em; }
+    input { margin: 0.5em; }
+    button { margin: 0.5em; }
+  </style>
+</head>
+<body>
+  <h1>Calculadora</h1>
+  <input type="number" id="num1" placeholder="Número 1" />
+  <input type="number" id="num2" placeholder="Número 2" />
+  <button onclick="calcular()">Calcular</button>
+
+  <h2>Resultado:</h2>
+  <pre id="resultado"></pre>
+
+  <script>
+    async function calcular() {
+      const num1 = parseFloat(document.getElementById('num1').value);
+      const num2 = parseFloat(document.getElementById('num2').value);
+
+      const res = await fetch('/operaciones', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ num1, num2 })
+      });
+
+      const data = await res.json();
+      document.getElementById('resultado').textContent = JSON.stringify(data, null, 2);
+    }
+  </script>
+</body>
+</html>

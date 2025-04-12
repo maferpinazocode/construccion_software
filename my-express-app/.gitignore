@@ -1,0 +1,21 @@
+# Node modules
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Entorno
+.env
+.env.local
+
+# Archivos temporales
+*.tmp
+*.swp
+
+# VSCode settings
+.vscode/
+
+# npm cache
+package-lock.json
